@@ -1,0 +1,357 @@
+/*
+ *
+ * Papyruss Framework
+ * Created by Joseph Gengarella
+ *
+*/
+
+
+/*
+ *
+ * Table of contents
+ * -----------------
+ * - General Styles
+ * - Grid System Styles
+ * - Clear fixes & Misc
+ * - Breakpoint Placeholders
+ *
+*/
+
+
+/*
+ * General Styles
+*/
+
+*,
+*:before,
+*:after {
+   -ms-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+html {
+   font-family: sans-serif;
+}
+
+body {
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   line-height: 1.4;
+   background-color: #fff;
+   margin: 0;
+}
+
+.container-fluid,
+.container {
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+   .container {
+      width: 718px;
+   }
+}
+
+@media (min-width: 1000px) {
+   .container {
+      width: 950px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .container {
+      width: 1150px;
+   }
+}
+
+
+/*
+ * Grid System Styles
+*/
+
+.row {
+   margin: 0 -15px;
+}
+
+[class*='c-'] {
+   position: relative;
+   float: left;
+   padding: 0 15px;
+   min-height: 1px;
+}
+
+.c-fill,
+.c-x-5_5,
+.c-x-12 {
+   width: 100%;
+}
+
+.c-x-11 {
+   width: 91.666667%;
+}
+
+.c-x-10 {
+   width: 83.333333%;
+}
+
+.c-x-9 {
+   width: 75%;
+}
+
+.c-x-8 {
+   width: 66.666667%;
+}
+
+.c-x-7 {
+   width: 58.333333%;
+}
+
+.c-x-6 {
+   width: 50%;
+}
+
+.c-x-5 {
+   width: 47.666667%;
+}
+
+.c-x-4 {
+   width: 33.333333%;
+}
+
+.c-x-3 {
+   width: 25%;
+}
+
+.c-x-2 {
+   width: 16.666667%;
+}
+
+.c-x-1 {
+   width: 8.333333%;
+}
+
+.c-x-1_5 {
+   width: 20%
+}
+
+.c-x-2_5 {
+   width: 40%
+}
+
+.c-x-3_5 {
+   width: 60%
+}
+
+.c-x-4_5 {
+   width: 80%
+}
+
+@media (min-width: 768px) {
+   .c-s-5_5,
+   .c-s-12 {
+      width: 100%;
+   }
+   .c-s-11 {
+      width: 91.666667%;
+   }
+   .c-s-10 {
+      width: 83.333333%;
+   }
+   .c-s-9 {
+      width: 75%;
+   }
+   .c-s-8 {
+      width: 66.666667%;
+   }
+   .c-s-7 {
+      width: 58.333333%;
+   }
+   .c-s-6 {
+      width: 50%;
+   }
+   .c-s-5 {
+      width: 47.666667%;
+   }
+   .c-s-4 {
+      width: 33.333333%;
+   }
+   .c-s-3 {
+      width: 25%;
+   }
+   .c-s-2 {
+      width: 16.666667%;
+   }
+   .c-s-1 {
+      width: 8.333333%;
+   }
+   .c-s-1_5 {
+      width: 20%
+   }
+   .c-s-2_5 {
+      width: 40%
+   }
+   .c-s-3_5 {
+      width: 60%
+   }
+   .c-s-4_5 {
+      width: 80%
+   }
+}
+
+@media (min-width: 1000px) {
+   .c-m-5_5,
+   .c-m-12 {
+      width: 100%;
+   }
+   .c-m-11 {
+      width: 91.666667%;
+   }
+   .c-m-10 {
+      width: 83.333333%;
+   }
+   .c-m-9 {
+      width: 75%;
+   }
+   .c-m-8 {
+      width: 66.666667%;
+   }
+   .c-m-7 {
+      width: 58.333333%;
+   }
+   .c-m-6 {
+      width: 50%;
+   }
+   .c-m-5 {
+      width: 47.666667%;
+   }
+   .c-m-4 {
+      width: 33.333333%;
+   }
+   .c-m-3 {
+      width: 25%;
+   }
+   .c-m-2 {
+      width: 16.666667%;
+   }
+   .c-m-1 {
+      width: 8.333333%;
+   }
+   .c-m-1_5 {
+      width: 20%
+   }
+   .c-m-2_5 {
+      width: 40%
+   }
+   .c-m-3_5 {
+      width: 60%
+   }
+   .c-m-4_5 {
+      width: 80%
+   }
+}
+
+@media (min-width: 1200px) {
+   .c-l-5_5,
+   .c-l-12 {
+      width: 100%;
+   }
+   .c-l-11 {
+      width: 91.666667%;
+   }
+   .c-l-10 {
+      width: 83.333333%;
+   }
+   .c-l-9 {
+      width: 75%;
+   }
+   .c-l-8 {
+      width: 66.666667%;
+   }
+   .c-l-7 {
+      width: 58.333333%;
+   }
+   .c-l-6 {
+      width: 50%;
+   }
+   .c-l-5 {
+      width: 47.666667%;
+   }
+   .c-l-4 {
+      width: 33.333333%;
+   }
+   .c-l-3 {
+      width: 25%;
+   }
+   .c-l-2 {
+      width: 16.666667%;
+   }
+   .c-l-1 {
+      width: 8.333333%;
+   }
+   .c-l-1_5 {
+      width: 20%
+   }
+   .c-l-2_5 {
+      width: 40%
+   }
+   .c-l-3_5 {
+      width: 60%
+   }
+   .c-l-4_5 {
+      width: 80%
+   }
+}
+
+
+/*
+ * Clear Fixes & Misc.
+*/
+
+.clear-fix:before,
+.clear-fix:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after {
+   display: table;
+   content: '';
+}
+
+.clear-fix:after,
+.container:after,
+.container-fluid:after,
+.row:after {
+   clear: both;
+}
+
+.pull-left {
+   float: left !important;
+}
+
+.pull-right {
+   float: right !important;
+}
+
+.hide {
+   display: none;
+}
+
+.show {
+   display: block;
+}
+
+
+/*
+ * Breakpoint placeholders
+*/
+
+@media (min-width: 400px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1000px) {}
+
+@media (min-width: 1200px) {}
