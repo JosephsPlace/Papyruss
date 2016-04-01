@@ -181,7 +181,7 @@ nav .nav-toggle {
    padding: 10px;
    float: right;
    background: transparent;
-   border: 1px solid #e7e7e7;
+   border: 1px solid transparent;
    margin: 7px 15px;
 }
 
@@ -189,13 +189,31 @@ nav .nav-toggle:focus {
    outline-width: 0;
 }
 
-.nav-toggle .bar {
+.nav-toggle [class*='bar-'] {
    height: 2px;
    width: 25px;
    border-radius: 1px;
    background: black;
    display: block;
    margin-bottom: 4px;
+   transform: rotate(0deg);
+   transition: .2s ease transform;
+}
+
+.nav-toggle .bar-bot {
+   margin-bottom: 0;
+}
+
+.opened .bar-top {
+   transform: rotate(45deg);
+   transform-origin: 15% 15%;
+}
+.opened .bar-mid {
+   opacity: 0;
+}
+.opened .bar-bot {
+   transform: rotate(-45deg);
+   transform-origin: 15% 95%;
 }
 
 .nav-toggle .bar:last-of-type {
