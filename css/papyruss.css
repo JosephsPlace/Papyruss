@@ -38,8 +38,18 @@ body {
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    font-size: 14px;
    line-height: 1.4;
+   color: #333;
    background-color: #fff;
    margin: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+a:active,
+a:hover {
+   outline-width: 0;
 }
 
 .container-fluid,
@@ -166,14 +176,31 @@ body {
 */
 
 nav {
-   padding-left: 0;
+   padding: 0 15px;
    margin-bottom: 0;
+   background: #fff;
 }
 
+.nav-bot,
 .nav-top {
    width: 100%;
    min-height: 50px;
+   border-bottom: 1px solid #e7e7e7;
    margin-bottom: 20px;
+}
+
+.nav-top {
+   top: 0;
+}
+
+.nav-bot {
+   bottom: 0;
+}
+
+.nav-top-fixed,
+.nav-bot-fixed {
+   position: fixed;
+   z-index: 1001;
 }
 
 nav .nav-toggle {
@@ -220,9 +247,54 @@ nav .nav-toggle:focus {
    margin-bottom: 0;
 }
 
+nav .nav-title {
+   float: left;
+   height: 50px;
+   line-height: 50px;
+   font-size: 1.3em;
+   color: #444;
+}
+
+#navbar {
+   display: none;
+}
+
+#navbar ul {
+   list-style: none;
+   padding-left: 0;
+   margin: 0;
+   min-height: 50px;
+}
+
+#navbar ul li {
+   display: inline-block;
+   min-height: inherit;
+   line-height: 50px;
+}
+
+#navbar ul li:not(:last-of-type) {
+   margin-right: 15px;
+}
+
+#navbar ul li a {
+   display: inline-block;
+   padding: 0 12px;
+   text-decoration: none;
+   color: #333;
+}
+
+#navbar ul li a.active,
+#navbar ul li a:hover {
+   color: #333;
+   background: #e7e7e7;
+}
+
 @media (min-width: 768px) {
    .nav-toggle {
       display: none;
+   }
+   #navbar {
+      display: block;
    }
 }
 
@@ -231,7 +303,7 @@ nav .nav-toggle:focus {
 */
 
 nav:before,
-nav:after
+nav:after,
 .clear-fix:before,
 .clear-fix:after,
 .container:before,
