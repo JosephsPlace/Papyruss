@@ -24,25 +24,29 @@ if (typeof jQuery == 'undefined') {
    'use strict';
 
    var nav_toggle = $('.nav-toggle');
+   var navbar = $('#navbar');
+
+   if (nav_toggle) {
+      navbar.hide();
+   }
 
    nav_toggle.on('click', function ( e ) {
       $(this).toggleClass('opened');
+      navbar.slideToggle();
    });
 }(jQuery);
 
+/*
+ * Fixed navbar
+*/
 ~function ($) {
    'use strict';
 
-   var is_fixed;
-
-   if ($('.nav-top-fixed').length ||
-      $('.nav-bot-fixed').length ||
-      $('nav-sidebar-fixed.length'))
-      is_fixed = true;
+   var is_fixed = $('.nav-top-fixed').length;
 
    if (is_fixed)
       $('body').css({
-         'padding-top' : $('#navbar').height() + 20
+         'padding-top' : $('nav').height() + 20
       });
 
 

@@ -176,7 +176,6 @@ a:hover {
 */
 
 nav {
-   padding: 0 15px;
    margin-bottom: 0;
    background: #fff;
 }
@@ -186,11 +185,11 @@ nav {
    width: 100%;
    min-height: 50px;
    border-bottom: 1px solid #e7e7e7;
-   margin-bottom: 20px;
 }
 
 .nav-top {
    top: 0;
+   margin-bottom: 20px;
 }
 
 .nav-bot {
@@ -209,7 +208,7 @@ nav .nav-toggle {
    float: right;
    background: transparent;
    border: 1px solid transparent;
-   margin: 7px 15px;
+   margin: 7px 0;
 }
 
 nav .nav-toggle:focus {
@@ -255,10 +254,6 @@ nav .nav-title {
    color: #444;
 }
 
-#navbar {
-   display: none;
-}
-
 #navbar ul {
    list-style: none;
    padding-left: 0;
@@ -287,6 +282,23 @@ nav .nav-title {
 #navbar ul li a:hover {
    color: #333;
    background: #e7e7e7;
+}
+
+@media (max-width: 767px) {
+   #navbar {
+      display: none;
+      transition: .2s ease display;
+   }
+   #navbar {
+      width: 100%;
+   }
+   #navbar ul li {
+      display: block;
+      padding: 0 15px;
+   }
+   #navbar ul li a {
+      width: 100%;
+   }
 }
 
 @media (min-width: 768px) {
