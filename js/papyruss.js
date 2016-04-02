@@ -23,39 +23,45 @@ if (typeof jQuery == 'undefined') {
 ~function ($) {
    'use strict';
 
-   var window_width = $(window).width();
-   var page_content = $('#page-content');
+   var window = $(window);
+   var prev_size = $(window).width();
    var sidebar = $('.nav-sidebar');
    var nav_toggle_link = $('.toggle-wrapper');
    var nav_toggle = $('.nav-toggle');
    var navbar = $('#navbar');
 
-    $(window).resize(function ( e ) {
-       var window_width = $(this).width();
-    });
-
-   if (sidebar.length)
+   if (sidebar.length) {
       navbar.show();
+   }
 
    $(window).resize(function ( e ) {
       if ($(this).width() > 767) {
-         if (sidebar.length)
-            sidebar.css({'margin-left' : 0});
-         if (!sidebar.length)
-            navbar.show();
+            if (sidebar.length) {
+               sidebar.css({'margin-left' : 0});
+            }
+            if (!sidebar.length)
+               navbar.show();
+            prev_size = $(this).width();
+      } else if ($(this).width() < 768) {
+            if (sidebar.length) {
+               navbar.show();
+               sidebar.css({
+                  'margin-left' : -250
+               });
+            }
       }
-      console.log($(this).width());
    });
 
    nav_toggle_link.on('click', function ( e ) {
       e.preventDefault();
-      $(nav_toggle).toggleClass('opened');
+
+      nav_toggle.toggleClass('opened');
+
       if (!sidebar.length) {
-         console.log("test");
          navbar.slideToggle();
       } else if (sidebar.length) {
-         console.log("test2");
          sidebar.toggleClass('sidebar-active');
+
          if (sidebar.hasClass('sidebar-active')) {
             sidebar.animate({
                'margin-left' : 0
@@ -65,6 +71,7 @@ if (typeof jQuery == 'undefined') {
                'margin-left' : -250
             });
          }
+
       }
    });
 }(jQuery);
