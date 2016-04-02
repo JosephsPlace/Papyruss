@@ -180,6 +180,46 @@ nav {
    background: #fff;
 }
 
+.nav-sidebar {
+   position: fixed;
+   width: 250px;
+   height: 100%;
+   z-index: 1001;
+   border-right: 1px solid #e7e7e7;
+}
+
+.nav-sidebar ~ #page-content {
+   padding-left: 265px;
+   padding-right: 15px;
+}
+
+.nav-sidebar .nav-title {
+   width: 100%;
+   text-align: right;
+}
+
+.nav-sidebar #navbar {
+   width: 100%;
+}
+
+.nav-sidebar #navbar ul {
+   text-align: right;
+}
+
+.nav-sidebar #navbar ul li {
+   width: 100%;
+}
+
+.nav-sidebar #navbar ul li:not(:last-of-type) {
+   margin-right: 0;
+   margin-bottom: 15px;
+}
+
+.nav-sidebar #navbar ul li a {
+   padding: 15px 12px;
+   width: 100%;
+}
+
 .nav-bot,
 .nav-top {
    width: 100%;
@@ -200,6 +240,15 @@ nav {
 .nav-bot-fixed {
    position: fixed;
    z-index: 1001;
+}
+
+.nav-sidebar .toggle-wrapper {
+   height: 100%;
+   display: inline-block;
+   right: -47px;
+   float: right;
+   background: #fff;
+   position: absolute;
 }
 
 nav .nav-toggle {
@@ -261,7 +310,8 @@ nav .nav-title {
    min-height: 50px;
 }
 
-#navbar ul li {
+.nav-bot #navbar ul li,
+.nav-top #navbar ul li {
    display: inline-block;
    min-height: inherit;
    line-height: 50px;
@@ -285,6 +335,12 @@ nav .nav-title {
 }
 
 @media (max-width: 767px) {
+   .nav-sidebar {
+      margin-left: -250px;
+   }
+   .nav-sidebar ~ #page-content {
+      padding-left: 62px;
+   }
    #navbar {
       display: none;
       transition: .2s ease display;
@@ -292,9 +348,11 @@ nav .nav-title {
    #navbar {
       width: 100%;
    }
-   #navbar ul li {
+   .nav-bot #navbar ul li,
+   .nav-top #navbar ul li {
       display: block;
-      padding: 0 15px;
+      margin-right: 0;
+      margin-bottom: 5px;
    }
    #navbar ul li a {
       width: 100%;
