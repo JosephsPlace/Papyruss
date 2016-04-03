@@ -249,6 +249,7 @@ nav {
    float: right;
    background: #fff;
    position: absolute;
+   border-right: 1px solid #e7e7e7;
 }
 
 nav .nav-toggle {
@@ -268,11 +269,13 @@ nav .nav-toggle:focus {
    height: 2px;
    width: 25px;
    border-radius: 1px;
-   background: black;
+   background: #333;
    display: block;
    margin-bottom: 4px;
-   transform: rotate(0deg);
-   transition: .2s ease transform;
+   -webkit-transform: rotate(0deg);
+           transform: rotate(0deg);
+   -webkit-transition: .2s ease transform;
+           transition: .2s ease transform;
 }
 
 .nav-toggle .bar-bot {
@@ -280,15 +283,19 @@ nav .nav-toggle:focus {
 }
 
 .opened .bar-top {
-   transform: rotate(45deg);
-   transform-origin: 15% 15%;
+   -webkit-transform: rotate(45deg);
+           transform: rotate(45deg);
+   -webkit-transform-origin: 15% 15%;
+           transform-origin: 15% 15%;
 }
 .opened .bar-mid {
    opacity: 0;
 }
 .opened .bar-bot {
-   transform: rotate(-45deg);
-   transform-origin: 15% 95%;
+   -webkit-transform: rotate(-45deg);
+           transform: rotate(-45deg);
+   -webkit-transform-origin: 15% 95%;
+           transform-origin: 15% 95%;
 }
 
 .nav-toggle .bar:last-of-type {
@@ -328,7 +335,7 @@ nav .nav-title {
    color: #333;
 }
 
-#navbar ul li a.active,
+#navbar ul li a.nav-active,
 #navbar ul li a:hover {
    color: #333;
    background: #e7e7e7;
@@ -343,6 +350,7 @@ nav .nav-title {
    }
    #navbar {
       display: none;
+      -webkit-transition: .2s ease display;
       transition: .2s ease display;
    }
    #navbar {
