@@ -10,6 +10,7 @@
 /*
  * Make sure jQuery is included
  */
+
 if (typeof jQuery == 'undefined') {
    throw new Error('Papyruss needs jQuery to run correcly, sorry :(');
 }
@@ -30,12 +31,12 @@ if (typeof jQuery == 'undefined') {
 (function ($) {
    'use strict';
 
-   var prev_size = $(window).width();
-   var current_width = $(window).width();
-   var sidebar = $('.nav-sidebar');
-   var nav_toggle_link = $('.toggle-wrapper');
-   var nav_toggle = $('.nav-toggle');
-   var navbar = $('#navbar');
+   var prev_size = $(window).width(),
+      current_width = $(window).width(),
+      sidebar = $('.nav-sidebar'),
+      nav_toggle_link = $('.toggle-wrapper'),
+      nav_toggle = $('.nav-toggle'),
+      navbar = $('#navbar');
 
    if (sidebar.length) {
       navbar.show();
@@ -64,11 +65,9 @@ if (typeof jQuery == 'undefined') {
       }
    });
 
-   // Currntly not working...
    $(window).resize(function (e) {
       e.preventDefault();
 
-      console.log("we");
       if ($(this).width() > 767) {
          navbar.show();
       }
@@ -106,9 +105,9 @@ if (typeof jQuery == 'undefined') {
 (function ($) {
    'use strict';
 
-   var page_content = $('#page-content');
-   var top_is_fixed = $('.nav-top-fixed').length;
-   var bot_is_fixed = $('.nav-bot-fixed').length;
+   var page_content = $('#page-content'),
+      top_is_fixed = $('.nav-top-fixed').length,
+      bot_is_fixed = $('.nav-bot-fixed').length;
 
    if (top_is_fixed) {
       page_content.css({
@@ -130,11 +129,11 @@ if (typeof jQuery == 'undefined') {
 (function ($) {
    'use strict';
 
-   var scroll_el = $('.scroll');
-   var nav = $('nav');
-   var top_offset = 20;
-   var window = $(window);
-   var top_nav = $('.nav-top').length;
+   var scroll_el = $('.scroll'),
+      nav = $('nav'),
+      top_offset = 20,
+      window = $(window),
+      top_nav = $('.nav-top').length;
 
    if (top_nav) {
       top_offset += nav.height();
@@ -156,20 +155,20 @@ if (typeof jQuery == 'undefined') {
 (function ($) {
    'use strict';
 
-   var top_offset = 20;
-   var sidebar = $('.nav-sidebar').length;
-   var nav = $('nav');
+   var top_offset = 21,
+      sidebar = $('.nav-sidebar').length,
+      nav = $('nav');
    if (!sidebar) {
       top_offset += nav.height();
    }
 
 
-   var prev_id;
-   var first = $('#navbar').find('a')
-               .attr('href').replace('#', '');
-   var navbar = $('#navbar');
-   var nav_links = navbar.find('a');
-   var nav_list =
+   var prev_id,
+      first = $('#navbar').find('a')
+      .attr('href').replace('#', ''),
+      navbar = $('#navbar'),
+      nav_links = navbar.find('a'),
+      nav_list =
       nav_links.map(function () {
          var item = $($(this).attr('href'));
          if (item.length) {
@@ -178,22 +177,22 @@ if (typeof jQuery == 'undefined') {
       });
 
    $(window).scroll(function () {
-      var distance_top = $(this).scrollTop() + top_offset;
+      var distance_top = $(this).scrollTop() + top_offset,
+         cur = nav_list.map(function () {
+            if ($(this).offset().top < distance_top) {
+               return this;
+            }
+         });
 
-      var cur = nav_list.map(function () {
-         if ($(this).offset().top < distance_top) {
-            return this;
-         }
-      });
       cur = cur[cur.length - 1];
       var id = cur && cur.length ? cur[0].id : first;
 
       if (prev_id !== id) {
          prev_id = id;
-         console.log(id);
          nav_links
             .removeClass('nav-active')
-            .filter('[href="#' + id + '"]').addClass('nav-active');
+            .filter('[href="#' + id + '"]')
+            .addClass('nav-active');
       }
    });
 })(jQuery);
