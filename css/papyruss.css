@@ -368,6 +368,7 @@ nav .nav-title {
 }
 
 @media (min-width: 768px) {
+   .nav-sidebar .toggle-wrapper,
    .nav-toggle {
       display: none;
    }
