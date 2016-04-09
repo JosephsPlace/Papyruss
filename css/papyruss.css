@@ -85,7 +85,10 @@ a:hover {
    margin: 0 -15px;
 }
 
-[class*='c-'] {
+[class*='c-x-'],
+[class*='c-s-'],
+[class*='c-m-'],
+[class*='c-l-'] {
    position: relative;
    float: left;
    padding: 0 15px;
@@ -177,6 +180,7 @@ a:hover {
 
 nav {
    margin-bottom: 0;
+   padding: 0 15px;
    background: #fff;
 }
 
@@ -310,33 +314,33 @@ nav .nav-title {
    color: #444;
 }
 
-#navbar ul {
+.navbar ul {
    list-style: none;
    padding-left: 0;
    margin: 0;
    min-height: 50px;
 }
 
-.nav-bot #navbar ul li,
-.nav-top #navbar ul li {
+.nav-bot .navbar ul li,
+.nav-top .navbar ul li {
    display: inline-block;
    min-height: inherit;
    line-height: 50px;
 }
 
-#navbar ul li:not(:last-of-type) {
+.navbar ul li:not(:last-of-type) {
    margin-right: 15px;
 }
 
-#navbar ul li a {
+.navbar ul li a {
    display: inline-block;
-   padding: 0 12px;
+   padding: 0 15px;
    text-decoration: none;
    color: #333;
 }
 
-#navbar ul li a.nav-active,
-#navbar ul li a:hover {
+.navbar ul li a.nav-active,
+.navbar ul li a:hover {
    color: #333;
    background: #e7e7e7;
 }
@@ -348,21 +352,21 @@ nav .nav-title {
    .nav-sidebar ~ #page-content {
       padding-left: 62px;
    }
-   #navbar {
+   .navbar {
       display: none;
       -webkit-transition: .2s ease display;
       transition: .2s ease display;
    }
-   #navbar {
+   .navbar {
       width: 100%;
    }
-   .nav-bot #navbar ul li,
-   .nav-top #navbar ul li {
+   .nav-bot .navbar ul li,
+   .nav-top .navbar ul li {
       display: block;
       margin-right: 0;
       margin-bottom: 5px;
    }
-   #navbar ul li a {
+   .navbar ul li a {
       width: 100%;
    }
 }
@@ -372,7 +376,7 @@ nav .nav-title {
    .nav-toggle {
       display: none;
    }
-   #navbar {
+   .navbar {
       display: block;
    }
 }
