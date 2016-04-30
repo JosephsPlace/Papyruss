@@ -213,15 +213,12 @@ nav {
 
 .nav-sidebar #navbar ul {
    text-align: right;
+   margin-left: -15px;
+   margin-right: -15px;
 }
 
 .nav-sidebar #navbar ul li {
    width: 100%;
-}
-
-.nav-sidebar #navbar ul li:not(:last-of-type) {
-   margin-right: 0;
-   margin-bottom: 15px;
 }
 
 .nav-sidebar #navbar ul li a {
@@ -334,7 +331,7 @@ nav .nav-title {
 }
 
 .navbar ul li:not(:last-of-type) {
-   margin-right: 15px;
+   margin-right: -4px;
 }
 
 .navbar ul li a {
@@ -510,6 +507,11 @@ input[type="button"]:focus.white-btn {
 /*
  * Forms
 */
+
+form {
+   width: 50%;
+}
+
 form,
 fieldset {
    margin-bottom: 20px;
@@ -533,11 +535,21 @@ input[type="search"],
 input[type="text"],
 input[type="tel"],
 input[type="url"],
+input[type="password"] {
+   width: 48%;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
 input[type="password"],
 textarea,
 select  {
    height: 40px;
-   margin: 5px;
+   margin: 1%;
    padding: 6px 15px;
    background: #fff;
    border: 1px solid #E2E2E2;
@@ -546,6 +558,7 @@ select  {
 
 textarea {
    min-height: 75px;
+   width: 100%;
 }
 
 input[type="email"]:focus,
